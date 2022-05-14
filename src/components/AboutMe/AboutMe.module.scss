@@ -1,0 +1,99 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+.navBar {
+  @include flex($justify: center, $gap: 1.25rem);
+  color: $antique-pink;
+  background-color: $dark-brown;
+
+  padding: 1.5rem;
+  padding-right: 1.875rem;
+
+  @include media(tablet) {
+    @include flex($justify: flex-end, $gap: 1.25rem);
+  }
+}
+
+.wrapper {
+  @include flex(
+    $direction: column,
+    $align: center,
+    $justify: space-around,
+    $gap: 0.625rem
+  );
+
+  @include media(tablet) {
+    @include flex($align: center, $justify: space-around, $gap: 0.625rem);
+  }
+}
+
+.title {
+  color: $dark-brown;
+  text-align: center;
+  font-size: 3rem;
+  margin: 4rem;
+
+  @include media(tablet) {
+    font-size: 4rem;
+    margin: 5rem;
+  }
+}
+
+.descriptionContainer {
+  @include flex($direction: column, $align: center);
+
+  @include media(tablet) {
+    @include flex($direction: column, $align: flex-start);
+    margin: 5rem;
+  }
+  &__subtitle {
+    @include flex($justify: center, $gap: 2rem);
+    color: $dark-brown;
+    background-color: $antique-pink;
+    font-size: 1.5rem;
+    width: 21.25rem;
+
+    @include media(tablet) {
+      font-size: 2rem;
+      width: 31.25rem;
+    }
+  }
+
+  &__description {
+    @include flex($justify: center, $gap: 2rem);
+    color: $dark-brown;
+    text-align: center;
+    font-size: 1rem;
+
+    margin-top: 0.625rem;
+    width: 21.25rem;
+
+    @include media(tablet) {
+      font-size: 1.5rem;
+
+      margin-top: 0.625rem;
+      width: 31.25rem;
+    }
+  }
+}
+
+.contacts {
+  @include flex($justify: center, $align: center, $gap: 3.125rem);
+  padding: 0.9375rem;
+
+  @include media(tablet) {
+    @include flex($direction: column, $gap: 3.125rem);
+  }
+
+  &__image {
+    position: relative;
+    background-color: $dark-brown;
+    border-radius: 0.3125rem;
+    padding: 1rem;
+
+    @include media(tablet) {
+      border-radius: 0.625rem;
+      padding: 1.5rem;
+    }
+  }
+}
