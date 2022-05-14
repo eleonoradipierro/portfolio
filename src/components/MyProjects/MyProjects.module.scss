@@ -1,0 +1,100 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+.projects {
+  @include flex(
+    $direction: column,
+    $justify: center,
+    $align: center,
+    $gap: 2rem
+  );
+
+  margin: 10% 0;
+
+  @include media(tablet) {
+    @include flex(
+      $direction: column,
+      $justify: flex-end,
+      $align: flex-end,
+      $gap: 2rem
+    );
+  }
+
+  &__title {
+    @include flex($justify: center, $gap: 2rem);
+
+    width: 21.25rem;
+    font-size: 0.9rem;
+    color: $antique-pink;
+    background-color: $dark-brown;
+
+    @include media(tablet) {
+      width: 50%;
+      height: 3.125rem;
+      font-size: 1.2rem;
+      background-color: $dark-brown;
+      color: $antique-pink;
+    }
+
+    & > h1 {
+      @include media(tablet) {
+        margin-left: 5rem;
+      }
+    }
+  }
+
+  &__cards {
+    @include flex(
+      $align: center,
+      $justify: center,
+      $gap: 1.875rem,
+      $wrap: wrap
+    );
+    align-self: center;
+
+    width: 70%;
+    max-height: 31.25rem;
+    padding: 5% 0rem;
+    background-color: $antique-pink;
+
+    overflow-y: scroll;
+    border: 0.1875rem solid $dark-brown;
+    border-radius: 1.875rem;
+    margin-bottom: 1.875rem;
+
+    @include media(tablet) {
+      width: 90%;
+    }
+
+    &__item {
+      @include flex(
+        $direction: column,
+        $align: center,
+        $justify: center,
+        $gap: 0.3125rem
+      );
+      width: 12rem;
+      height: 9rem;
+      margin: 1.875rem 1.875rem;
+
+      text-transform: capitalize;
+      text-align: center;
+
+      color: $dark-brown;
+      background-color: rgb(255, 255, 255);
+
+      border-radius: 0.9375rem;
+      box-shadow: 0.1875rem 0.1875rem $dark-brown;
+
+      &__title {
+        font-size: 1.25rem;
+        font-weight: 800;
+      }
+
+      &__description {
+        font-size: 0.9375rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
