@@ -18,7 +18,23 @@ const NavBar = () => {
   );
 };
 
+const ContactImage = (props: { name: string; src: string }) => {
+  const { name, src } = props;
+  return (
+    <div className={styles.contacts__image}>
+      <Image src={src} alt={name} loading="lazy" layout="fill" />
+    </div>
+  );
+};
+
 const AboutMe = () => {
+  const contactImages = [
+    { name: "linkedin", src: linkedin },
+    { name: "mail", src: mail },
+    { name: "phone", src: phone },
+    { name: "github", src: github },
+  ];
+
   return (
     <>
       <NavBar />
@@ -40,23 +56,9 @@ const AboutMe = () => {
           </div>
 
           <div className={styles.contacts}>
-            <div className={styles.contacts__image}>
-              <Image
-                src={linkedin}
-                alt="linkedin"
-                loading="lazy"
-                layout="fill"
-              />
-            </div>
-            <div className={styles.contacts__image}>
-              <Image src={mail} alt="mail" loading="lazy" layout="fill" />
-            </div>
-            <div className={styles.contacts__image}>
-              <Image src={phone} alt="phone" loading="lazy" layout="fill" />
-            </div>
-            <div className={styles.contacts__image}>
-              <Image src={github} alt="github" loading="lazy" layout="fill" />
-            </div>
+            {contactImages.map((contact) => {
+              return <ContactImage name={contact.name} src={contact.src} />;
+            })}
           </div>
         </div>
       </section>
