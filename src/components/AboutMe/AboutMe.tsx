@@ -31,7 +31,7 @@ const ContactImage = (props: {
   return (
     <a
       className={styles.contacts__image}
-      href={href ? "#top" : href}
+      href={href ? href : "#top"}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
