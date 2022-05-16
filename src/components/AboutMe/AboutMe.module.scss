@@ -95,5 +95,20 @@
       border-radius: 0.625rem;
       padding: 1.5rem;
     }
+
+    &__tooltip {
+      width: 250px;
+      background-color: $antique-pink;
+      border: 3px solid $dark-brown;
+      color: $dark-brown;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 10px;
+
+      position: absolute;
+      right: 55px;
+      top: 5px;
+      z-index: 1;
+    }
   }
 }

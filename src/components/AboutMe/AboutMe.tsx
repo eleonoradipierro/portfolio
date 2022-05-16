@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./AboutMe.module.scss";
 import Image from "next/image";
 
@@ -9,30 +9,59 @@ import github from "../../../public/images/github.svg";
 
 const NavBar = () => {
   return (
-    <div>
+    <div id="aboutMe">
       <div className={styles.navBar}>
-        <div>About Me</div>
-        <div>Projects</div>
+        <a href="#aboutMe">About Me</a>
+        <a href="#projects">Projects</a>
       </div>
     </div>
   );
 };
 
-const ContactImage = (props: { name: string; src: string }) => {
-  const { name, src } = props;
+const ContactImage = (props: {
+  name: string;
+  src: string;
+  href: string;
+  other: string;
+}) => {
+  const { name, src, href, other } = props;
+
+  const [hover, setHover] = useState(false);
+
   return (
-    <div className={styles.contacts__image}>
+    <a
+      className={styles.contacts__image}
+      href={href ? "#top" : href}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
       <Image src={src} alt={name} loading="lazy" layout="fill" />
-    </div>
+      {hover && <div className={styles.contacts__image__tooltip}>{other}</div>}
+    </a>
   );
 };
 
 const AboutMe = () => {
   const contactImages = [
-    { name: "linkedin", src: linkedin },
-    { name: "mail", src: mail },
-    { name: "phone", src: phone },
-    { name: "github", src: github },
+    {
+      name: "linkedin",
+      src: linkedin,
+      href: "https://www.linkedin.com/in/eleonoradipierro/",
+      other: "Linkedin",
+    },
+    {
+      name: "mail",
+      src: mail,
+      href: "",
+      other: "eleonora.dipierro@gmail.com",
+    },
+    { name: "phone", src: phone, href: "", other: "+39 334 345 1004" },
+    {
+      name: "github",
+      src: github,
+      href: "https://github.com/eleonoradipierro/",
+      other: "GitHub",
+    },
   ];
 
   return (
@@ -57,7 +86,14 @@ const AboutMe = () => {
 
           <div className={styles.contacts}>
             {contactImages.map((contact) => {
-              return <ContactImage name={contact.name} src={contact.src} />;
+              return (
+                <ContactImage
+                  name={contact.name}
+                  src={contact.src}
+                  href={contact.href}
+                  other={contact.other}
+                />
+              );
             })}
           </div>
         </div>
