@@ -6,9 +6,6 @@ import pokedex from "../../../public/images/pokedex.png";
 
 import Image from "next/image";
 
-import { useState } from "react";
-import { SassColor } from "sass";
-
 type StaticImageData = {
   src: string;
   height: number;
@@ -34,7 +31,7 @@ const Card = (props: {
         layout="fill"
       />
       <div className={styles.item__container}>
-        <div className={styles.item__container__title}>{name}</div>
+        <h3 className={styles.item__container__title}>{name}</h3>
         <p className={styles.item__container__description}>{description}</p>
       </div>
     </a>
@@ -53,7 +50,7 @@ const MyProjects = () => {
     {
       name: "Pokedex",
       description:
-        "Website that allows the user to search data about a Pokemon.",
+        "Website that allows the user to search data about a Pokemon. (Work in progress)",
       src: "",
       image: pokedex,
     },

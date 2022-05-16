@@ -25,7 +25,7 @@
     font-size: 0.9rem;
     color: $antique-pink;
     background-color: $dark-brown;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
     @include media(tablet) {
       width: 50%;
       height: 3.125rem;
@@ -53,7 +53,7 @@
 
     width: 70%;
     max-height: 31.25rem;
-    padding: 5% 0rem;
+    padding: 3.125rem 0.625rem;
     background-color: $antique-pink;
 
     overflow-y: scroll;
@@ -74,9 +74,8 @@
     $justify: flex-end,
     $gap: 0.3125rem
   );
-  width: 13rem;
-  height: 16rem;
-  margin: 1.875rem 1.875rem;
+  width: 15rem;
+  height: 20rem;
 
   text-transform: capitalize;
   text-align: center;
@@ -85,7 +84,7 @@
   background-color: rgb(255, 255, 255);
 
   border-radius: 0.9375rem;
-  border: 1px solid $dark-brown;
+  border: 0.0625rem solid $dark-brown;
   box-shadow: 0.1875rem 0.1875rem $dark-brown;
 
   overflow: hidden;
@@ -106,7 +105,7 @@
     &__title {
       font-size: 1.25rem;
       font-weight: 800;
-      padding-bottom: 5px;
+      padding-bottom: 0.3125rem;
       width: 12rem;
     }
 
@@ -115,7 +114,7 @@
       font-size: 0.9375rem;
       font-weight: 500;
       width: 12rem;
-      padding-top: 5px;
+      padding-top: 0.3125rem;
     }
   }
 
@@ -124,7 +123,7 @@
       opacity: 1;
       transform: translateY(0);
       transition: 0.5s all ease-out;
-      margin: 10px;
+      margin: 0.625rem;
     }
 
     .item__image {
