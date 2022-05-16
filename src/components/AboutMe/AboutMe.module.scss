@@ -107,9 +107,14 @@
       border-radius: 10px;
 
       position: absolute;
-      right: 55px;
-      top: 5px;
+      right: -110px;
+      top: 40px;
       z-index: 1;
+
+      @include media(tablet) {
+        left: 55px;
+        top: 5px;
+      }
     }
   }
 }

@@ -34,6 +34,9 @@ const ContactImage = (props: {
       href={href ? href : "#top"}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      onClick={() => {
+        setHover(!hover);
+      }}
     >
       <Image src={src} alt={name} loading="lazy" layout="fill" />
       {hover && <div className={styles.contacts__image__tooltip}>{other}</div>}
