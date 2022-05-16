@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://{your_github_username}.github.io/{app-name}",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +10,7 @@
     "lint": "next lint && prettier --loglevel silent --write ."
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "next": "12.1.6",
     "prettier": "^2.6.2",
     "react": "18.1.0",

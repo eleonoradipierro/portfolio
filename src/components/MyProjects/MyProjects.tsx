@@ -4,6 +4,8 @@ import styles from "./MyProjects.module.scss";
 import appleClone from "../../../public/images/apple-clone.png";
 import pokedex from "../../../public/images/pokedex.png";
 
+import Image from "next/image";
+
 import { useState } from "react";
 import { SassColor } from "sass";
 
@@ -24,7 +26,13 @@ const Card = (props: {
 
   return (
     <a href={src} className={styles.item}>
-      <img src={image.src} alt={name} className={styles.item__image} />
+      <Image
+        src={image.src}
+        alt={name}
+        className={styles.item__image}
+        loading="lazy"
+        layout="fill"
+      />
       <div className={styles.item__container}>
         <div className={styles.item__container__title}>{name}</div>
         <p className={styles.item__container__description}>{description}</p>
@@ -57,9 +65,10 @@ const MyProjects = () => {
       </div>
 
       <div className={styles.projects__cards}>
-        {projects.map((project) => {
+        {projects.map((project, i) => {
           return (
             <Card
+              key={i}
               name={project.name}
               description={project.description}
               src={project.src}

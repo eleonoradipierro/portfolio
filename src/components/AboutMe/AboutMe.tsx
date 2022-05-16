@@ -74,10 +74,10 @@ const AboutMe = () => {
             <h1 className={styles.title}>Eleonora Di Pierro</h1>
             <div className={styles.descriptionContainer}>
               <h3 className={styles.descriptionContainer__subtitle}>
-                Hello! I'm Eleonora.
+                Hello! I&apos;m Eleonora.
               </h3>
               <p className={styles.descriptionContainer__description}>
-                I love programming and currently I'm passionate about web
+                I love programming and currently I&apos;m passionate about web
                 development. In my free time I like to learn about new
                 technologies, workout, read and play videogames.
               </p>
@@ -85,9 +85,10 @@ const AboutMe = () => {
           </div>
 
           <div className={styles.contacts}>
-            {contactImages.map((contact) => {
+            {contactImages.map((contact, i) => {
               return (
                 <ContactImage
+                  key={i}
                   name={contact.name}
                   src={contact.src}
                   href={contact.href}
