@@ -55,10 +55,15 @@ const AboutMe = () => {
     {
       name: "mail",
       src: mail,
-      href: "",
+      href: "mailto:eleonora.dipierro@gmail.com",
       other: "eleonora.dipierro@gmail.com",
     },
-    { name: "phone", src: phone, href: "", other: "+39 334 345 1004" },
+    {
+      name: "phone",
+      src: phone,
+      href: "tel:+393343451004",
+      other: "+39 334 345 1004",
+    },
     {
       name: "github",
       src: github,
