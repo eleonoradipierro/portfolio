@@ -98,22 +98,22 @@
     }
 
     &__tooltip {
-      width: 250px;
+      width: 15.625rem;
       background-color: $antique-pink;
-      border: 3px solid $dark-brown;
+      border: 0.1875rem solid $dark-brown;
       color: $dark-brown;
       text-align: center;
-      padding: 5px 0;
-      border-radius: 10px;
+      padding: 0.3125rem 0;
+      border-radius: 0.625rem;
 
       position: absolute;
-      right: -110px;
-      top: 40px;
+      right: -6.875rem;
+      top: 2.5rem;
       z-index: 1;
 
       @include media(tablet) {
-        left: 55px;
-        top: 5px;
+        right: 3.4375rem;
+        top: 0.3125rem;
       }
     }
   }
